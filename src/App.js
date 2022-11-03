@@ -19,7 +19,6 @@ const App = () => {
   `;
 
 
-
   return (
 
     <div className="App">
@@ -28,7 +27,6 @@ const App = () => {
       <CharacterWrapper>
         <Character />
       </CharacterWrapper>
-
 
     </div>
 

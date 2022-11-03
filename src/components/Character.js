@@ -17,6 +17,7 @@ const [openDiv, setDiv] = useState(false)
     useEffect(() => {
         axios.get('https://swapi.dev/api/people/')
         .then((res)=>{
+
             setCharacterData(res.data)
             console.log(res.data)
             
@@ -38,7 +39,6 @@ const [openDiv, setDiv] = useState(false)
     background: white
     `;
 
-
     const DetailsWrapper = styled.div`
 
     display: flex
@@ -46,31 +46,33 @@ const [openDiv, setDiv] = useState(false)
     `;
 
     return (
-    <div>
-        {characterData.map((character)=>{
-        return(
-            <div>
-            <Wrapper>
-                {character.name}
-            </Wrapper>
-          <DetailsWrapper>
-          <p>{character.birth_year}</p>
-          <p>{character.gender}</p>
-          <p>{character.height}</p>
-          <p>{character.mass}</p>
-          <p>{character.skin_color}</p>
-          <p>{character.hair_color}</p>
-          <p>{character.eye_color}</p>
-          </DetailsWrapper>
+
+        <div>
+            
+            {characterData.map((character)=>{
+            return(
+
+                <div>
+                <Wrapper>
+                    {character.name}
+                </Wrapper>
+            <DetailsWrapper>
+            <p>{character.birth_year}</p>
+            <p>{character.gender}</p>
+            <p>{character.height}</p>
+            <p>{character.mass}</p>
+            <p>{character.skin_color}</p>
+            <p>{character.hair_color}</p>
+            <p>{character.eye_color}</p>
+            </DetailsWrapper>
+            </div>
+        
+            )
+            })}
+
         </div>
-        )
-        })}
-    </div>
+
     )
     }
-
-
-
-
 
 export default Character
