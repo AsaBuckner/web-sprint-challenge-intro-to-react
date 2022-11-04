@@ -11,8 +11,8 @@ import "../App.css";
 
 const Character = () => {
 
-const [characterData, setCharacterData] = useState(null)
-const [openDiv, setDiv] = useState(false)
+const [characterData, setCharacterData] = useState([])
+
 
     useEffect(() => {
         axios.get('https://swapi.dev/api/people/')
@@ -25,10 +25,7 @@ const [openDiv, setDiv] = useState(false)
         
     }, [])
 
-    const toggleOpen = () => {
-        setDiv(!openDiv)
-        console.log(openDiv)
-    }
+ 
 
     const Wrapper = styled.div`
     width: 90%;
